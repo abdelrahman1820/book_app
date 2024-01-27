@@ -10,8 +10,8 @@ class NewsBooksCubit extends Cubit<NewsBooksState> {
   final HomeRepo homerepo;
   Future<void> featchNewestBooks() async {
     var result = await homerepo.featchnNwestBooks();
-    result.fold((failure) {
-      emit(NewsBooksFailure(errMessage: failure.errorMessage));
+    result.fold((failuree) {
+      emit(NewsBooksFailure(errMessage: failuree.errorMessage));
     }, (books) {
       emit(NewsBooksSucess(books: books));
     });
