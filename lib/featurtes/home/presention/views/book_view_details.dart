@@ -12,17 +12,21 @@ class BookDetailsView extends StatefulWidget {
   State<BookDetailsView> createState() => _BookDetailsViewState();
 }
 
-
 class _BookDetailsViewState extends State<BookDetailsView> {
   @override
   void initState() {
-  BlocProvider.of<SimillarBooksCubit>(context).featchSimillarBooks(cattegory:widget.bookmodel.volumeInfo!.categories![0] );
+    BlocProvider.of<SimillarBooksCubit>(context).featchSimillarBooks(
+        cattegory: widget.bookmodel.volumeInfo!.categories![0]);
     super.initState();
+    print("asdas");
   }
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: BookDetailsBody(bookmodel:widget.bookmodel,),
+    return Scaffold(
+      body: BookDetailsBody(
+        bookmodel: widget.bookmodel,
+      ),
     );
   }
 }
